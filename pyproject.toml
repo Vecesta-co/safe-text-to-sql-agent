@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safe-text-to-sql-agent"
+version = "1.0.0"
+description = "AST-validated, read-only safe Text-to-SQL agent with schema introspection, multi-dialect support, and REST API"
+authors = [{name = "Vecesta.co", email = "vecesta.co@gmail.com"}]
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = ["pydantic>=2.0", "colorama>=0.4"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0"]
+
+[project.scripts]
+safe-sql = "src.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
